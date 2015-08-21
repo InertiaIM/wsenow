@@ -1,0 +1,64 @@
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
+
+_home:
+    pattern:  /
+    defaults: { _controller: InertiaWinspireBundle:Default:index }
+    
+experiences:
+    pattern:   /experiences
+    defaults:  { _controller: InertiaWinspireBundle:Default:overview }
+    
+about:
+    pattern:   /about
+    defaults:  { _controller: InertiaWinspireBundle:Default:about }
+
+privacy:
+    pattern:   /privacy
+    defaults:  { _controller: InertiaWinspireBundle:Default:static, slug: privacy }
+    
+calendar:
+    pattern:   /calendar
+    defaults:  { _controller: InertiaWinspireBundle:Default:calendar }
+    
+calendar_data:
+    pattern:   /calendar-data
+    defaults:  { _controller: InertiaWinspireBundle:Default:calendarData }
+    
+contact:
+    pattern:   /contact
+    defaults:  { _controller: InertiaWinspireBundle:Default:contact }
+    
+ajax_contact:
+    pattern:   /ajax-contact
+    defaults:  { _controller: InertiaWinspireBundle:Default:ajaxContact }
+    
+what_we_do:
+    pattern:   /what-we-do/{slug}
+    defaults:  { _controller: InertiaWinspireBundle:Default:what, slug: none }
+    
+ajax_detail:
+    pattern:   /detail/{slug}
+    defaults:  { _controller: InertiaWinspireBundle:Default:detail }
+    
+ajax_mini:
+    pattern:   /mini/{slug}
+    defaults:  { _controller: InertiaWinspireBundle:Default:mini }
+    
+ajax_similar:
+    pattern:   /similar/{slug}
+    defaults:  { _controller: InertiaWinspireBundle:Default:similar }
+    
+ajax_subscribe:
+    pattern:   /subscribe.json
+    defaults:  { _controller: InertiaWinspireBundle:Default:subscribe }
+    
+service_update:
+    pattern:   /service/{type}/{method}/{sfId}
+    defaults:  { _controller: InertiaWinspireBundle:Service:trigger }
+    
+category:
+    pattern:   /{slug}
+    defaults:  { _controller: InertiaWinspireBundle:Default:category }

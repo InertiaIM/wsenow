@@ -1,0 +1,111 @@
+{% extends 'InertiaWinspireBundle::layout.html.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery-ui-1.8.17.custom.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/home.js') }}"></script>
+{% endblock %}
+
+{% block title %}Winspire Sports &amp; Entertainment | Corporate Events{% endblock %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <div id="banner-wrapper">
+        <div id="banner">
+{% set left = -1020 %}
+{% for item in banners %}
+            <div style="z-index:1; position:absolute; top:0; left:{{ left }}px;" class="slide">
+                <img src="{{ asset('uploads/assets/experiences/images/' ~ item.image ) }}" width="1020" height="600"/>
+                <div class="slide-overlay" style="display:none;">
+{% if item.logo is not null %}
+                    <img style="float:left; margin-right:15px;" src="{{ asset('uploads/assets/experiences/logos/' ~ item.logo) }}"/>
+{% endif %}
+                    <h3>{{ item.name }}</h3>
+                    {{ item.description | truncate(110, true) | markdown }}
+                    <a href="{{ path('category', { 'slug': item.category.slug }) }}#{{ item.slug }}" class="learn-more">learn more</a>
+                </div>
+            </div>
+{% set left = left + 1020 %}
+{% endfor %}
+        </div>
+    </div>
+    <div id="banner-filter-wrapper">
+        <div id="banner-filter">
+            <div id="filter-left" class="filter">&nbsp;</div>
+            <div id="filter-center" class="filter" style="display:none;">
+                <a href="#" id="nav-left">&nbsp;</a>
+                <a href="#" id="nav-right">&nbsp;</a>
+            </div>
+            <div id="filter-right" class="filter">&nbsp;</div>
+        </div>
+    </div>
+    <div id="shadow">&nbsp;</div>
+    <div id="middle">
+        <p><a class="button" style="float:right;" href="{{ path('experiences') }}">See All Experiences<span></span></a>
+        Nothing creates impact, emotion and relationships better than Corporate Experiences. 
+        Reward, incentivize and inspire those you work with to build your business. 
+        Winspire Sports and Entertainment provides integrated programs that reach and 
+        engage those who are most important to you. We offer exclusive access to top 
+        sporting and entertainment events worldwide and once in a lifetime experiences. 
+        Take advantage of our expertise in corporate hospitality.</p>
+        
+        <p>Let Winspire Sports and Entertainment make you look like a champion.</p>
+    </div>
+    <div id="middle2-wrapper">
+        <div id="middle2">
+            <div class="column">
+                <div class="block">
+                    <h2>Specific Date In Mind?</h2>
+                    <p>Are you looking to plan your event during a specific time period?</p>
+                    <a class="calendar" href="{{ path('calendar') }}">Use our calendar to find your perfect experience.</a>
+                </div>
+                <div class="block">
+                    <h2>What Our Clients Say</h2>
+                    <p><em>“Winspire organized the greatest experience our organization has ever been on.
+                    In fact, our customers can’t stop talking about it!”</em></p>
+                    <p class="attribute">Matt Dwight, President<br/>
+                    <strong>Farmington Industries</strong></p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="block">
+                    <h2>Need Some Ideas?</h2>
+                    <p>At a loss for ideas? Let one of our experience planners help you create the perfect event.</p>
+                    <a class="email" href="{{ path('contact') }}">Email Us</a>
+                    <p class="or">or</p>
+                    <p class="phone">Call Us (855) 718-8724</p>
+                </div>
+                <div class="block">
+                    <h2>Customize!</h2>
+                    <p>All of our packages are customizable.<br/>
+                    Just let us know what your needs and objectives are and we will customize an experience to meet them.</p>
+                </div>
+                <div class="block">
+                    <h2>Stay Informed</h2>
+                    <p>We will keep you up to date on our latest news and promotional offers.</p>
+                    <form id="newsletter">
+                        <label for="email">Enter email...</label>
+                        <input type="text" name="email" id="email"/><button type="submit">Submit</button>
+                        <span class="footnote">* By entering your email address you agree
+                        <br/>to receive emails from WSE.</span>
+                        <div class="result">
+                            <img src="{{ asset('images/ajax-loader.gif') }}" width="16" height="16" alt=""/>
+                            <span>&nbsp;</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="column featured">
+                <h2>Featured Experiences</h2>
+                <ul>
+{% for item in featured %}
+                    <li><a href="{{ path('category', { 'slug': item.category.slug }) }}#{{ item.slug }}">{{ item.name }}</a></li>
+{% endfor %}
+                </ul>
+                <a class="all" href="{{ path('experiences') }}">see all</a>
+            </div>
+            <div style="clear:both;line-height:0; font-size:0;">&nbsp;</div>
+        </div>
+    </div>
+{% endblock %}

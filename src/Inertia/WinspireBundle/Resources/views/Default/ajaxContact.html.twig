@@ -1,0 +1,61 @@
+{% if app.session.hasFlash('notice') %}
+        <p style="clear:both;">&nbsp;</p>
+        <h3>{{ app.session.flash('notice') }}</h3>
+        <p style="margin-left:-2px;"><a class="button2" href="{{ path('experiences') }}">Return to Experiences<span></span></a></p>
+{% else %}
+        <form style="clear:both;" action="{{ path('contact') }}" method="post" {{ form_enctype(form) }} novalidate>
+                <div id="field-first_name">
+                    {{ form_label(form.first_name) }}
+{% if form.children.first_name.vars.errors | length > 0 %}
+                    {{ form_widget(form.first_name, { 'attr': { 'class': 'error' } }) }}
+{% else %}
+                    {{ form_widget(form.first_name) }}
+{% endif %}
+                </div>
+                <div id="field-last_name">
+                    {{ form_label(form.last_name) }}
+{% if form.children.last_name.vars.errors | length > 0 %}
+                    {{ form_widget(form.last_name, { 'attr': { 'class': 'error' } }) }}
+{% else %}
+                    {{ form_widget(form.last_name) }}
+{% endif %}
+                </div>
+                <div id="field-company">
+                    {{ form_label(form.company) }}
+{% if form.children.company.vars.errors | length > 0 %}
+                    {{ form_widget(form.company, { 'attr': { 'class': 'error' } }) }}
+{% else %}
+                    {{ form_widget(form.company) }}
+{% endif %}
+                </div>
+                <div id="field-phone">
+                    {{ form_label(form.phone) }}
+{% if form.children.phone.vars.errors | length > 0 %}
+                    {{ form_widget(form.phone, { 'attr': { 'class': 'error' } }) }}
+{% else %}
+                    {{ form_widget(form.phone) }}
+{% endif %}
+                </div>
+                <div id="field-email">
+                    {{ form_label(form.email) }}
+{% if form.children.email.vars.errors | length > 0 %}
+                    {{ form_widget(form.email, { 'attr': { 'class': 'error' } }) }}
+{% else %}
+                    {{ form_widget(form.email) }}
+{% endif %}
+                </div>
+                <div id="field-size">
+                    {{ form_label(form.size) }}
+                    {{ form_errors(form.size) }}
+                    {{ form_widget(form.size) }}
+                </div>
+                <div id="field-message">
+                    {{ form_label(form.message) }}
+                    {{ form_errors(form.message) }}
+                    {{ form_widget(form.message) }}
+                </div>
+                <span>* indicates required</span>
+                {{ form_rest(form) }}
+                <button type="submit">Send request</button>
+            </form>
+{% endif %}

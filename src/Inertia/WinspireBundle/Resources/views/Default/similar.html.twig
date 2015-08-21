@@ -1,0 +1,5 @@
+            <h2>Other {{ category.name }} Experiences...</h2>
+{% for item in similar %}
+            <a href="#{{ item.slug }}"><img src="{{ asset('uploads/assets/experiences/images/' ~ item.image) }}" width="315" height="186"/><span>{{ item.name }}</span></a>
+{% endfor %}
+            <div style="clear:both;line-height:0; font-size:0;">&nbsp;</div>

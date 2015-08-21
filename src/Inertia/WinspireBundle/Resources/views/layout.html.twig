@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="{{ asset('css/custom-theme/jquery-ui-1.8.17.custom.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('css/custom-theme/jquery.ui.selectmenu.css') }}" type="text/css" media="all" />
+    
+    <link rel="stylesheet" href="{{ asset('css/kendo.common.min.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('css/kendo.default.min.css') }}" type="text/css" media="all" />
+    
+    <link rel="stylesheet" href="{{ asset('css/jquery.multiselect.css') }}" type="text/css" media="all" />
+
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" type="text/css" media="all" />
+    
+<!--[if lt IE 9]>
+    <link rel="stylesheet" href="{{ asset('css/ie.css') }}" type="text/css" media="all" />  
+<![endif]-->
+    {% block javascripts %}
+        
+    <script type="text/javascript" src="{{ asset('js/jquery-1.7.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.infieldlabel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/global.js') }}"></script>
+    {% endblock %}
+    <title>{% block title %}Winspire Sports &amp; Entertainment{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-4391760-2']);
+        _gaq.push(['_trackPageview']);
+         
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body{% block body_class %}{% endblock %}>
+    <div id="header-wrapper">
+        <div id="header">
+            <a id="logo" href="{{ path('_home') }}">
+               <img src="{{ asset('images/wse-logo.png') }}" width="255" height="100" alt="Winspire Sports &amp; Entertainment"/>
+            </a>
+            <ul>    
+                <li><a href="{{ path('experiences') }}" id="nav_experiences">Experiences</a></li>
+                <li><a href="{{ path('what_we_do') }}" id="nav_what">What We Do</a></li>
+                <li><a href="{{ path('about') }}" id="nav_about">About</a></li>
+                <li><a href="{{ path('contact') }}" id="nav_contact">Contact</a></li>
+            </ul>
+            <div id="telephone"><span>(855) 718-8724</span></div>
+        </div>
+    </div>
+    <div id="content-wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="footer-wrapper">
+        <div id="footer">
+            <ul>
+                <li><a href="{{ path('about') }}">About</a></li>
+                <li><a href="{{ path('contact') }}">Contact</a></li>
+                <li><a href="{{ path('privacy') }}">Privacy Policy</a></li>
+            </ul>
+            <div class="copyright">© Copyright {{ 'now' | date('Y') }} Winspire Sports &amp; Entertainment. All Rights Reserved.</div>
+        </div>
+    </div>
+</body>
+</html>

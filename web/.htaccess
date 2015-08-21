@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Canonical domain should be wsenow.com
+    #RewriteCond %{HTTP_HOST} ^www.wsenow.com [NC,OR]
+    #RewriteCond %{HTTP_HOST} ^www.winspirese.com [NC,OR]
+    #RewriteCond %{HTTP_HOST} ^winspirese.com [NC,OR]
+    #RewriteCond %{HTTP_HOST} ^www.winspiresportsandentertainment.com [NC,OR]
+    #RewriteCond %{HTTP_HOST} ^winspiresportsandentertainment.com [NC]
+    #RewriteRule ^/?(.*) http://wsenow.com/$1 [L,R=301,NE]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app.php [QSA,L]
+</IfModule>

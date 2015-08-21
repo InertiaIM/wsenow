@@ -1,0 +1,5 @@
+app/cache/*
+app/config/parameters*
+app/logs/*
+app/data/wse.sqlite
+vendor/

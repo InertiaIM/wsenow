@@ -1,0 +1,22 @@
+{% extends 'InertiaWinspireBundle::layout.html.twig' %}
+{% block body_class %} class="error404"{% endblock %}
+
+{% block title %}Winspire Sports &amp; Entertainment{% endblock %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <div id="middle6-wrapper">
+        <div id="middle6">
+            <h2 style="clear:both;">{{ status_code }} Error - Seems this page doesn’t exist.</h2>
+            <p>Please try clicking one of the links above or below to get where you want to go.</p>
+            <p>&nbsp;</p>
+            <p><strong><a href="{{ path('_home') }}">Home</a></strong></p>
+            <p><strong><a href="{{ path('experiences') }}">All Experiences</a></strong></p>
+            <p><strong><a href="{{ path('calendar') }}">Experience Calendar</a></strong></p>
+            <p><strong><a href="{{ path('about') }}">About Us</a></strong></p>
+            <p><strong><a href="{{ path('contact') }}">Contact Us</a></strong></p>
+        </div>
+    </div>
+{% render 'InertiaWinspireBundle:Experience:extendedFooter' %}
+{% endblock %}

@@ -1,0 +1,53 @@
+Inertia\WinspireBundle\Entity\Experience:
+    type: entity
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        category_id:
+            type: integer
+        name:
+            type: string
+            length: 128
+        slug:
+            type: string
+            length: 128
+        location:
+            type: string
+            length: 128
+        image:
+            type: string
+            length: 128
+        mini_image:
+            type: string
+            length: 128
+        logo:
+            type: string
+            length: 128
+        description:
+            type: text
+        detail:
+            type: text
+        start_date:
+            type: date
+        end_date:
+            type: date
+        is_featured:
+            type: boolean
+        is_home:
+            type: boolean
+        sf_id:
+            type: string
+            length: 256
+        is_dirty:
+            type: boolean
+        is_active:
+            type: boolean
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: experiences
+            joinColumn:
+                name: category_id
+                referencedColumnName: id

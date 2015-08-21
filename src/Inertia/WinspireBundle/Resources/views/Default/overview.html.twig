@@ -1,0 +1,248 @@
+{% extends 'InertiaWinspireBundle::layout.html.twig' %}
+{% block body_class %} class="experiences"{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/jquery.tools.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-ui-1.8.17.custom.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kendo.core.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kendo.data.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kendo.fx.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kendo.list.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kendo.popup.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/kendo.combobox.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/overview.js') }}"></script>
+{% endblock %}
+
+{% block title %}Winspire Sports &amp; Entertainment | Corporate Sports Experiences{% endblock %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <div id="middle3-wrapper">
+        <div id="middle3-grid">
+            <table id="grid">
+                <tr>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[0].category.slug }) }}#{{ random[0].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[0].image) }}" width="255" height="150" alt="{{ random[0].name }}"/>
+                            <span>{{ random[0].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[1].category.slug }) }}#{{ random[1].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[1].image) }}" width="255" height="150" alt="{{ random[1].name }}"/>
+                            <span>{{ random[1].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[2].category.slug }) }}#{{ random[2].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[2].image) }}" width="255" height="150" alt="{{ random[2].name }}"/>
+                            <span>{{ random[2].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[3].category.slug }) }}#{{ random[3].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[3].image) }}" width="255" height="150" alt="{{ random[3].name }}"/>
+                            <span>{{ random[3].name }}</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[4].category.slug }) }}#{{ random[4].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[4].image) }}" width="255" height="150" alt="{{ random[4].name }}"/>
+                            <span>{{ random[4].name }}</span>
+                        </a>
+                    </td>
+                    <td colspan="2" rowspan="3" id="info">
+                        <h2>Make it memorable...</h2>
+                        <p>In today’s environment, retaining your top performers and clients is a constant challenge. 
+                        Let Winspire Sports and Entertainment help you raise the bar. Show your appreciation with unforgettable 
+                        events that are ideal for executive retreats, corporate team building, 
+                        incentive programs and entertaining clients.</p>
+                        <p>By leveraging some of the most unique and exclusive events in the world we deliver 
+                        memorable corporate excursions that recharge, excite, and motivate your most valuable clients and staff.</p>
+                        <select id="search-select">
+                            <option value=""></option>
+{% for item in experiences %}
+                            <option value="{{ item.category.slug }}#{{ item.slug }}">{{ item.name }}</option>
+{% endfor %}
+                        </select>
+                        <a href="{{ path('calendar') }}" id="calendar" title="Click to use our Experience Calendar if you have a specific date range in mind.">Calendar</a>
+                        <a href="#" id="phone" title="Call us at (855) 718-8724 or click to email us!">Call</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[5].category.slug }) }}#{{ random[5].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[5].image) }}" width="255" height="150" alt="{{ random[5].name }}"/>
+                            <span>{{ random[5].name }}</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[6].category.slug }) }}#{{ random[6].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[6].image) }}" width="255" height="150" alt="{{ random[6].name }}"/>
+                            <span>{{ random[6].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[7].category.slug }) }}#{{ random[7].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[7].image) }}" width="255" height="150" alt="{{ random[7].name }}"/>
+                            <span>{{ random[7].name }}</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[8].category.slug }) }}#{{ random[8].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[8].image) }}" width="255" height="150" alt="{{ random[8].name }}"/>
+                            <span>{{ random[8].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[9].category.slug }) }}#{{ random[9].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[9].image) }}" width="255" height="150" alt="{{ random[9].name }}"/>
+                            <span>{{ random[9].name }}</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[10].category.slug }) }}#{{ random[10].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[10].image) }}" width="255" height="150" alt="{{ random[10].name }}"/>
+                            <span>{{ random[10].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[11].category.slug }) }}#{{ random[11].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[11].image) }}" width="255" height="150" alt="{{ random[11].name }}"/>
+                            <span>{{ random[11].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[12].category.slug }) }}#{{ random[12].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[12].image) }}" width="255" height="150" alt="{{ random[12].name }}"/>
+                            <span>{{ random[12].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[13].category.slug }) }}#{{ random[13].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[13].image) }}" width="255" height="150" alt="{{ random[13].name }}"/>
+                            <span>{{ random[13].name }}</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[14].category.slug }) }}#{{ random[14].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[14].image) }}" width="255" height="150" alt="{{ random[14].name }}"/>
+                            <span>{{ random[14].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[15].category.slug }) }}#{{ random[15].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[15].image) }}" width="255" height="150" alt="{{ random[15].name }}"/>
+                            <span>{{ random[15].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[16].category.slug }) }}#{{ random[16].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[16].image) }}" width="255" height="150" alt="{{ random[16].name }}"/>
+                            <span>{{ random[16].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[17].category.slug }) }}#{{ random[17].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[17].image) }}" width="255" height="150" alt="{{ random[17].name }}"/>
+                            <span>{{ random[17].name }}</span>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[18].category.slug }) }}#{{ random[18].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[18].image) }}" width="255" height="150" alt="{{ random[18].name }}"/>
+                            <span>{{ random[18].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[19].category.slug }) }}#{{ random[19].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[19].image) }}" width="255" height="150" alt="{{ random[19].name }}"/>
+                            <span>{{ random[19].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[20].category.slug }) }}#{{ random[20].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[20].image) }}" width="255" height="150" alt="{{ random[20].name }}"/>
+                            <span>{{ random[20].name }}</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('category', { 'slug': random[21].category.slug }) }}#{{ random[21].slug }}" class="experience">
+                            <img src="{{ asset('uploads/assets/experiences/images/' ~ random[21].image) }}" width="255" height="150" alt="{{ random[21].name }}"/>
+                            <span>{{ random[21].name }}</span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div id="middle5-wrapper">
+        <div id="middle5">
+            <div class="column featured">
+                <h2>All Categories</h2>
+                <ul>
+{% for item in categories %}
+                    <li><a href="{{ path('category', { 'slug': item.slug }) }}">{{ item.name }}</a></li>
+{% endfor %}
+                </ul>
+            </div>
+            <div class="column featured">
+                <h2>Featured Experiences</h2>
+                <ul>
+{% for item in featured %}
+                    <li><a href="{{ path('category', { 'slug': item.category.slug }) }}#{{ item.slug }}">{{ item.name }}</a></li>
+{% endfor %}
+                </ul>
+                <a class="all" href="{{ path('experiences') }}">see all</a>
+            </div>
+            <div class="column">
+                <div class="block">
+                    <h2>Need Some Ideas?</h2>
+                    <p>At a loss for ideas? Let one of our experience planners help you create the perfect event.</p>
+                    <a class="email" href="{{ path('contact') }}">Email Us</a>
+                    <p class="or">or</p>
+                    <p class="phone">Call Us (855) 718-8724</p>
+                </div>
+                <div class="block">
+                    <h2>Customize!</h2>
+                    <p>All of our packages are customizable.<br/>Just let us know what your needs ad 
+                    objectives are and we will customize an experience to meet them.</p>
+                </div>
+                <div class="block">
+                    <h2>Stay Informed</h2>
+                    <p>We will keep you up to date on our latest news and promotional offers.</p>
+                    <form id="newsletter">
+                        <label for="email">Enter email...</label>
+                        <input type="text" name="email" id="email"/><button type="submit">Submit</button>
+                        <span class="footnote">* By entering your email address you agree
+                        <br/>to receive emails from WSE.</span>
+                        <div class="result">
+                            <img src="{{ asset('images/ajax-loader.gif') }}" width="16" height="16" alt=""/>
+                            <span>&nbsp;</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div style="clear:both;line-height:0; font-size:0;">&nbsp;</div>
+        </div>
+    </div>
+    
+    <div class="simple-overlay" id="contact1">
+        <h3>Request more information.</h3>
+        <p>Call us anytime at <em>(855) 718-8724</em> or fill out the following form 
+        and one of our experience experts will call you asap.</p>
+{% include 'InertiaWinspireBundle:Default:ajaxContact.html.twig' with {'form': form} %}
+    </div>
+{% endblock %}

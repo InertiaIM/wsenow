@@ -1,0 +1,54 @@
+#banner .slide-overlay {
+    /* For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, endColorstr=#7F000000);
+    /* For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, endColorstr=#7F000000)";
+}
+
+form#newsletter input {
+    line-height:30px !important;
+} 
+
+#header-wrapper {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f8fb', endColorstr='#bdd3e4',GradientType=1 ); /* IE6-8 */
+}
+
+#header #telephone {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#226da3', endColorstr='#005695',GradientType=1 ); /* IE6-8 */
+}
+
+#content-wrapper {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafcfd', endColorstr='#7faaca',GradientType=1 ); /* IE6-8 */
+}
+
+#middle2-wrapper {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5790b9', endColorstr='#0d5f9a',GradientType=1 ); /* IE6-8 */
+}
+
+#middle3-wrapper {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5790b9', endColorstr='#085b98',GradientType=1 ); /* IE6-8 */
+}
+
+#middle4-wrapper {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#669abf', endColorstr='#1f6ba2',GradientType=1 ); /* IE6-8 */
+}
+
+#middle6-wrapper {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5790b9', endColorstr='#085b98',GradientType=1 ); /* IE6-8 */
+}
+
+#middle6 form {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9f0f6', endColorstr='#ccddea',GradientType=1 ); /* IE6-8 */
+}
+
+#middle6 form button {
+    border:0px solid #ffffff !important;
+}
+
+#middle7-wrapper {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5790b9', endColorstr='#085b98',GradientType=1 ); /* IE6-8 */
+}
+
+#middle8-wrapper {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5790b9', endColorstr='#085b98',GradientType=1 ); /* IE6-8 */
+}

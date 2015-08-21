@@ -1,0 +1,40 @@
+{% if total == 0 %}
+            <h3 style="margin-left:10px; margin-bottom:10px;">No Results Found</h3>
+            <span class="experience-count">{{ total }} Result{% if total != 1 %}s{% endif %} Found</span>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+{% endif %}
+{% set monthCount = 1 %}
+{% for month in experiences %}
+{%      if month | length > 0 %}
+            <h3 style="margin-left:10px; margin-bottom:10px;">{{ month[0].startDate | date('F Y') }}</h3>
+{%          if monthCount == 1 %}
+            <span class="experience-count">{{ total }} Result{% if total != 1 %}s{% endif %} Found</span>
+{%          endif %}
+            <table style="clear:both;" class="grid{% if month | length == 1 %} single{% endif %}">
+{% set count = 1 %}
+{%          for experience in month %}
+                <tr{% if count is even %} class="even"{% endif %} 
+                    data-experience-title="{{ experience.name }}"
+                    data-experience-date="{{ experience.startDate | date('F j') }}"
+                    data-experience-location="{{ experience.location }}"
+                    data-experience-image="{{ experience.image }}"
+                    data-experience-slug="{{ experience.slug }}" 
+                    data-category-slug="{{ experience.category.slug }}" 
+                    data-experience-description="{{ experience.description }}">
+                    <td class="date">
+                        <span>{{ experience.startDate | date('n/j') }}</span>
+                    </td>
+                    <td class="title">
+                        <span>{{ experience.name }}</span>
+                    </td>
+                    <td class="location">
+                        <span>{{ experience.location }}</span>
+                    </td>
+                </tr>
+{% set count = count + 1 %}
+{%          endfor %}
+            </table>
+{% set monthCount = monthCount + 1 %}
+{%      endif %}
+{% endfor %}
