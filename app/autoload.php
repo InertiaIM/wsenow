@@ -1,7 +1,8 @@
 <?php
 
-use Symfony\Component\ClassLoader\UniversalClassLoader;
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use Symfony\Component\ClassLoader\UniversalClassLoader;
+use Symfony\Component\ClassLoader\MapClassLoader;
 
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
@@ -34,6 +35,20 @@ $loader->registerNamespaceFallbacks(array(
     __DIR__.'/../src',
 ));
 $loader->register();
+
+$mapLoader = new MapClassLoader([
+    'ProxySettings' => __DIR__.'/../vendor/salesforce/soapclient/ProxySettings.php',
+    'SforceBaseClient' => __DIR__.'/../vendor/salesforce/soapclient/SforceBaseClient.php',
+    'SforceEmail' => __DIR__.'/../vendor/salesforce/soapclient/SforceEmail.php',
+    'SforceEnterpriseClient' => __DIR__.'/../vendor/salesforce/soapclient/SforceEnterpriseClient.php',
+    'SforceFieldTypes' => __DIR__.'/../vendor/salesforce/soapclient/SforceFieldTypes.php',
+    'SforceHeaderOptions' => __DIR__.'/../vendor/salesforce/soapclient/SforceHeaderOptions.php',
+    'SforceMetadataClient' => __DIR__.'/../vendor/salesforce/soapclient/SforceMetadataClient.php',
+    'SforceMetaObject' => __DIR__.'/../vendor/salesforce/soapclient/SforceMetaObject.php',
+    'SforcePartnerClient' => __DIR__.'/../vendor/salesforce/soapclient/SforcePartnerClient.php',
+    'SforceProcessRequest' => __DIR__.'/../vendor/salesforce/soapclient/SforceProcessRequest.php',
+]);
+$mapLoader->register();
 
 AnnotationRegistry::registerLoader(function($class) use ($loader) {
     $loader->loadClass($class);

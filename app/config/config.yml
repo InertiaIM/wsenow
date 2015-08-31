@@ -107,5 +107,11 @@ services:
              - { name: twig.extension }
          
 mz_mail_chimp:
-    api_key: %api_key%
-    default_list: %default_list%
+    api_key: %mc_api_key%
+    default_list: %mc_default_list%
+
+inertia_winspire:
+    sf_user:       %sf_user%
+    sf_password:   %sf_password%
+    sf_wsdl_path:  %sf_wsdl_path%
+    sf_upload_dir: %sf_upload_dir%
